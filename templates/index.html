@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeedBot Control Center</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>WeedBot Control Center</h1>
+    
+    <!-- Movement Buttons -->
+    <div class="controls">
+        <form action="/move" method="POST">
+            <button name="direction" value="forward">Forward</button>
+            <button name="direction" value="left">Left</button>
+            <button name="direction" value="nothing">Stop</button>
+            <button name="direction" value="right">Right</button>
+            <button name="direction" value="backward">Backward</button>
+        </form>
+    </div>
+
+    <!-- Image Capture -->
+    <div class="capture">
+        <form action="/capture" method="POST">
+            <button type="submit">Capture Image</button>
+        </form>
+        <img src="/static/weed_image.jpg" alt="Captured Image" width="600">
+    </div>
+</body>
+</html>
