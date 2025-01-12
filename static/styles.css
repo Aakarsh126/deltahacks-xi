@@ -1,20 +1,48 @@
+/* General Body Styling */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
-.controls button {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 18px;
+/* Button Styling */
+.buttons button {
+    padding: 15px 20px;
+    margin: 5px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: none;
     cursor: pointer;
 }
 
-.capture button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
+.buttons button:active {
+    background-color: #cccccc;
+}
+
+input[type="range"], input[type="number"] {
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    font-size: 1rem;
+}
+
+/* Image Styling */
+.image img {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Mobile Optimizations */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .buttons button {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
 }

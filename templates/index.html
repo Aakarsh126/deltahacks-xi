@@ -8,24 +8,42 @@
 </head>
 <body>
     <h1>WeedBot Control Center</h1>
-    
-    <!-- Movement Buttons -->
-    <div class="controls">
-        <form action="/move" method="POST">
-            <button name="direction" value="forward">Forward</button>
-            <button name="direction" value="left">Left</button>
-            <button name="direction" value="nothing">Stop</button>
-            <button name="direction" value="right">Right</button>
-            <button name="direction" value="backward">Backward</button>
-        </form>
-    </div>
+
+    <!-- Movement Controls -->
+    <form action="/" method="POST">
+        <h3>Movement Controls</h3>
+        <label for="speed">Speed Control:</label>
+        <input type="range" id="speed" name="speed" min="0" max="100" value="50">
+        <div class="buttons">
+            <button name="direction" value="forward" class="btn btn-forward">Forward</button>
+            <br>
+            <button name="direction" value="left" class="btn btn-left">Left</button>
+            <button name="direction" value="nothing" class="btn btn-stop">Stop</button>
+            <button name="direction" value="right" class="btn btn-right">Right</button>
+            <br>
+            <button name="direction" value="backward" class="btn btn-backward">Backward</button>
+        </div>
+        
+    </form>
+
+    <!-- Servo Controls -->
+    <form action="/" method="POST">
+        <h3>Servo Controls</h3>
+        <label for="servo_x">X-Axis Servo Angle:</label>
+        <input type="number" id="servo_x" name="servo_x" min="0" max="180" value="90">
+        <label for="servo_y">Y-Axis Servo Angle:</label>
+        <input type="number" id="servo_y" name="servo_y" min="0" max="180" value="90">
+        <button type="submit">Set Servo Position</button>
+    </form>
 
     <!-- Image Capture -->
-    <div class="capture">
-        <form action="/capture" method="POST">
-            <button type="submit">Capture Image</button>
-        </form>
-        <img src="/static/weed_image.jpg" alt="Captured Image" width="600">
+    <form action="/capture" method="POST">
+        <button type="submit">Capture Image</button>
+    </form>
+
+    <!-- Display Captured Image -->
+    <div class="image">
+        <img src="/static/weed_image.jpg" alt="Captured Image">
     </div>
 </body>
 </html>
